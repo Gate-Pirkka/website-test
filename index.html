@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Claude</title>
+    <title>Gate Apps - Choose Your Version</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -81,17 +81,59 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #079669 0%, #10b981 100%);
-            color: white;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 600;
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .version-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .version-btn {
+            display: block;
+            background: white;
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 24px 32px;
+            text-decoration: none;
+            color: #1f2937;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(7, 150, 105, 0.1);
+        }
+
+        .version-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(7, 150, 105, 0.2);
+            border-color: #059669;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+        }
+
+        .version-btn-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #079669;
+            margin-bottom: 8px;
+        }
+
+        .version-btn-desc {
             font-size: 1rem;
-            margin-top: 24px;
-            box-shadow: 0 4px 20px rgba(7, 150, 105, 0.3);
-            animation: fadeInUp 1.2s ease-out, pulse 2s ease-in-out infinite;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .version-btn-url {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
         }
 
         @keyframes fadeInUp {
@@ -172,6 +214,22 @@
             .floating-circle {
                 display: none;
             }
+
+            .logo {
+                max-width: 150px;
+            }
+
+            .version-btn {
+                padding: 20px 24px;
+            }
+
+            .version-btn-title {
+                font-size: 1.25rem;
+            }
+
+            .version-btn-desc {
+                font-size: 0.875rem;
+            }
         }
     </style>
 </head>
@@ -182,9 +240,29 @@
 
     <div class="container">
         <div class="main-content">
-            <h1>Hello Claude</h1>
-            <p class="subtitle">A modern, clean greeting inspired by great design</p>
-            <span class="badge">✨ Welcome</span>
+            <img src="logo.png" alt="Gate Apps Logo" class="logo">
+            <h1>Welcome to Gate Apps</h1>
+            <p class="subtitle">Please choose version</p>
+
+            <div class="version-buttons">
+                <a href="https://login.gate-apps.com" class="version-btn">
+                    <div class="version-btn-title">Version 1</div>
+                    <div class="version-btn-desc">Current Production Version</div>
+                    <div class="version-btn-url">login.gate-apps.com</div>
+                </a>
+
+                <a href="https://app.gate-apps.com/" class="version-btn">
+                    <div class="version-btn-title">Version 2025</div>
+                    <div class="version-btn-desc">New Version (Tenant Code Required)</div>
+                    <div class="version-btn-url">app.gate-apps.com/#tenant#</div>
+                </a>
+
+                <a href="https://gate.systemsgarden.com" class="version-btn">
+                    <div class="version-btn-title">Legacy Version</div>
+                    <div class="version-btn-desc">Systems Garden</div>
+                    <div class="version-btn-url">gate.systemsgarden.com</div>
+                </a>
+            </div>
         </div>
     </div>
 </body>
